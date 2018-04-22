@@ -25,7 +25,7 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
-    -v `pwd`:/home/`id -u`/conda \
+    -v `pwd`:/home/`id -un`/conda \
     dclong/conda-build
 ```
 
