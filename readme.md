@@ -20,6 +20,16 @@ docker run -d \
     dclong/conda-build
 ```
 
+```
+docker run -d \
+    --log-opt max-size=50m \
+    -e DOCKER_USER=`id -un` \
+    -e DOCKER_USER_ID=`id -u` \
+    -e DOCKER_PASSWORD=`id -un` \
+    -v `pwd`:/wwwroot \
+    dclong/conda-build
+```
+
 ## About the Author
 
 [Personal Blog](http://www.legendu.net)   |   [GitHub](https://github.com/dclong)   |   [Bitbucket](https://bitbucket.org/dclong/)   |   [LinkedIn](http://www.linkedin.com/in/ben-chuanlong-du-1239b221/)
