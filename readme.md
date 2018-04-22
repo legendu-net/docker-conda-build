@@ -11,7 +11,7 @@ Additional: Anaconda Python 3 minimal and conda-build.
 ## Usage in Linux/Unix
 
 ```
-docker run -d \
+docker run -it \
     --log-opt max-size=50m \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
@@ -20,7 +20,7 @@ docker run -d \
 ```
 
 ```
-docker run -d \
+docker run -it \
     --log-opt max-size=50m \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
