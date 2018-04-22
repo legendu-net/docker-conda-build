@@ -56,7 +56,7 @@ Keep the default if you don't know what are the best to use.
 ```
 docker run -d \
     --log-opt max-size=50m \
-    --name blog \
+    --name conda_build \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
@@ -66,7 +66,7 @@ docker run -d \
 ```
 docker run -d \
     --log-opt max-size=50m \
-    --name blog \
+    --name conda_build \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
@@ -77,7 +77,7 @@ docker run -d \
 ## Blogging in the Docker Container 
 
 ```
-docker exec -it -u `id -un` blog /bin/bash
+docker exec -it -u `id -un` conda_build /bin/bash
 ```
 
 ## Known Issues
