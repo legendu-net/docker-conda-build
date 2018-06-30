@@ -60,25 +60,24 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
-    dclong/conda-build
-```
-
-```
-docker run -d \
-    --log-opt max-size=50m \
-    --name conda_build \
-    -e DOCKER_USER=`id -un` \
-    -e DOCKER_USER_ID=`id -u` \
-    -e DOCKER_PASSWORD=`id -un` \
     -v `pwd`:/conda \
     dclong/conda-build
 ```
 
-## Blogging in the Docker Container 
+## Build a conda Package
 
-```
-docker exec -it -u `id -un` conda_build /bin/bash
-```
+1. Login to Anaconda Cloud.
+
+        anaconda login
+        
+2. Build your recipe. 
+
+3. Run the following command to build and upload your conda package.
+
+        conda build <recipe-dir>
+        
+Please refer to [conda/conda-build](https://github.com/conda/conda-build#building-your-own-packages) 
+for more detailed information.
 
 ## Known Issues
 
