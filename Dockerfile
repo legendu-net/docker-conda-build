@@ -1,8 +1,8 @@
 FROM dclong/conda
 
-RUN conda install conda-build \
+RUN conda install conda-build anaconda-client \
     && conda update conda-build
 
-RUN mkdir /conda && chmod 777 /conda
+RUN mkdir /workdir && chmod 777 /workdir
 
 COPY scripts/ /scripts/
