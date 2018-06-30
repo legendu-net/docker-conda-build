@@ -60,11 +60,14 @@ docker run -d \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
-    -v `pwd`:/conda \
+    -v `pwd`:/workdir \
     dclong/conda-build
 ```
 
 ## Build a conda Package
+
+It is suggested that you work in the directory `/workdir`. 
+You can mount your directory on the host machine into this directory.
 
 1. Login to Anaconda Cloud.
 
