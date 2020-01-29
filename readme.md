@@ -8,6 +8,10 @@ OS: Ubuntu
 
 Additional: Anaconda Python 3 minimal and conda-build.
 
+## Prerequisite
+You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
+
+
 ## Usage in Linux/Unix
 
 ### Prerequisites
