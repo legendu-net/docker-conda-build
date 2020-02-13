@@ -1,6 +1,6 @@
 # dclong/conda-build [@DockerHub](https://hub.docker.com/r/dclong/conda-build/) | [@GitHub](https://github.com/dclong/docker-conda-build)
 
-Mini Anaconda 3 with conda-build in Docker. 
+Mini Anaconda 3 with conda-build (for building and publishing conda packages) in Docker. 
 
 ## Details 
 
