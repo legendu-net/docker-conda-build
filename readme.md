@@ -18,7 +18,7 @@ and mounts the current working directory and `/home` on the host machine
 to `/workdir` and `/home_host` in the container respectively.
 
 ```
-docker run -d \
+docker run -it \
     --hostname conda-build \
     --log-opt max-size=50m \
     --name conda_build \
@@ -31,7 +31,7 @@ docker run -d \
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/conda-build).
 ```
-docker run -d \
+docker run -it \
     --hostname conda-build \
     --log-opt max-size=50m \
     --name conda_build \
