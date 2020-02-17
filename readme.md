@@ -60,20 +60,12 @@ You can mount your directory on the host machine into this directory.
 Please refer to [conda/conda-build](https://github.com/conda/conda-build#building-your-own-packages) 
 for more detailed information.
 
-## Known Issues
+## [Log Information](http://www.legendu.net/en/blog/my-docker-images/#docker-container-logs)
 
-1. The subprocess managment issue. 
-    This is not an issue at in most use cases. 
-    This Docker image launch service using a shell script 
-    so there won't be orphan subprocesses 
-    when the process of the Docker container is get killed.
-    However, launching by shell script is not the best way for managing processes.
-    I might switch to the [Supervisor](https://github.com/Supervisor/supervisor) for process management 
-    or use the base image of [pushion/ubuntu](https://github.com/phusion/baseimage-docker) in future. 
+## [Detailed Information](http://www.legendu.net/en/blog/my-docker-images/#list-of-images-and-detailed-information) 
 
+## [Known Issues](http://www.legendu.net/en/blog/my-docker-images/#known-issues)
 
-## About the Author
-
-[Personal Blog](http://www.legendu.net)   |   [GitHub](https://github.com/dclong)   |   [Bitbucket](https://bitbucket.org/dclong/)   |   [LinkedIn](http://www.linkedin.com/in/ben-chuanlong-du-1239b221/)
+## [About the Author](http://www.legendu.net/pages/about)
 
 
