@@ -2,72 +2,46 @@
 
 Mini Anaconda 3 with conda-build (for building and publishing conda packages) in Docker. 
 
-## Details 
-
-OS: Ubuntu
-
-Additional: Anaconda Python 3 minimal and conda-build.
-
 ## Prerequisite
 You need to [install Docker](http://www.legendu.net/en/blog/docker-installation/) before you use this Docker image.
 
 
 ## Usage in Linux/Unix
 
-### Prerequisites
-You must have Docker installed. 
-If you are on Ubuntu, 
-the just use the command below to install the community edition of Docker.
-```
-sudo apt-get install docker.io
-```
-If you'd rather install the enterprise edition
-or if you are on other platforms, 
-please refer to the offical Docker doc [Install Docker](https://docs.docker.com/install/).
+Please refer to the Section
+[Usage](http://www.legendu.net/en/blog/my-docker-images/#usage)
+of the post [My Docker Images](http://www.legendu.net/en/blog/my-docker-images/) 
+for detailed instruction on how to use the Docker image.
 
-### Pull the Docker Image
-```
-docker pull dclong/conda-build
-```
-For people in mainland of China, 
-please refer to the post 
-[Speedup Docker Pulling and Pushing](http://www.legendu.net/en/blog/speedup-docker-pulling-and-pushing/) 
-on ways to speed up pushing/pulling of Docker images. 
-If you don't bother, 
-then just use the command below. 
-```
-docker pull registry.docker-cn.com/dclong/conda-build
-```
-
-### Start a Container
-
-Below are some Docker command arguments explained. 
-These are for properly handling file permissions in the Docker container and on the host. 
-Keep the default if you don't know what are the best to use. 
-`DOCKER_PASSWORD` is probably the only argument you want to and should change. 
-
-- `DOCKER_USER`: The user to be created (dynamically) in the container. 
-    By default, the name of the current user on the host is used. 
-- `DOCKER_USER_ID`: The ID of the user to be created in the container. 
-    By default, the ID of the current user on the host is used. 
-- `DOCKER_PASSWORD`: The password of the user to be created. 
-    By default, it's the same as the user name. 
-    You'd better change it for security reasons. 
-    Of course, users can always change it later using the command `passwd`.
-- `DOCKER_GROUP_ID`: The group of the user to be created. 
-    By default, it's the group ID of the current user on the host.
+The following command starts a container 
+and mounts the current working directory and `/home` on the host machine 
+to `/workdir` and `/home_host` in the container respectively.
 
 ```
 docker run -d \
+    --hostname conda-build \
     --log-opt max-size=50m \
     --name conda_build \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
     -v `pwd`:/workdir \
+    -v $(dirname $HOME):/home_host \
     dclong/conda-build
 ```
-
+Use the image with the `next` tag (which is the testing/next version of dclong/conda-build).
+```
+docker run -d \
+    --hostname conda-build \
+    --log-opt max-size=50m \
+    --name conda_build \
+    -e DOCKER_USER=`id -un` \
+    -e DOCKER_USER_ID=`id -u` \
+    -e DOCKER_PASSWORD=`id -un` \
+    -v `pwd`:/workdir \
+    -v $(dirname $HOME):/home_host \
+    dclong/conda-build:next
+```
 ## Build a conda Package
 
 It is suggested that you work in the directory `/workdir`. 
