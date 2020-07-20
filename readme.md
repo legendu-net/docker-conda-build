@@ -21,7 +21,6 @@ to `/workdir` and `/home_host` in the container respectively.
 docker run -it \
     --hostname conda-build \
     --log-opt max-size=50m \
-    --name conda_build \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
@@ -34,7 +33,6 @@ Use the image with the `next` tag (which is the testing/next version of dclong/c
 docker run -it \
     --hostname conda-build \
     --log-opt max-size=50m \
-    --name conda_build \
     -e DOCKER_USER=`id -un` \
     -e DOCKER_USER_ID=`id -u` \
     -e DOCKER_PASSWORD=`id -un` \
