@@ -26,7 +26,7 @@ docker run -it \
     -e DOCKER_PASSWORD=`id -un` \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/conda-build /bin/bash
+    dclong/conda-build /scripts/sys/init.sh
 ```
 Use the image with the `next` tag (which is the testing/next version of dclong/conda-build).
 ```
@@ -38,7 +38,7 @@ docker run -it \
     -e DOCKER_PASSWORD=`id -un` \
     -v "$(pwd)":/workdir \
     -v "$(dirname $HOME)":/home_host \
-    dclong/conda-build:next /bin/bash
+    dclong/conda-build:next /scripts/sys/init.sh
 ```
 ## Build a conda Package
 
